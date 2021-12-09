@@ -36,7 +36,7 @@ def print_grid(grid):
     max_x = max(grid.keys())
     for x in range(min_x, max_x+1):
       #print(str(x) + "," + str(y) + "=" + grid[x][y])
-      line = line + grid[x][y]
+      line = line + str(grid[x][y])
     print(line)
 
 def get_grid_col_count(grid):
@@ -94,3 +94,28 @@ def add_to_grid(x, y, value, grid):
   if x not in grid:
     grid[x] = {}
   grid[x][y] = value
+
+def copy_grid(grid):
+  new_grid = {}
+  min_y = min(grid[0].keys())
+  max_y = max(grid[0].keys())
+  for y in range(min_y, max_y+1):
+    min_x = min(grid.keys())
+    max_x = max(grid.keys())
+    for x in range(min_x, max_x+1):
+      new_x = x
+      new_y = y
+      if new_x not in new_grid:
+        new_grid[new_x] = {}
+      new_grid[new_x][new_y] = grid[x][y]
+  return new_grid
+
+def convert_grid_to_int(grid):
+  new_grid = {}
+  min_y = min(grid[0].keys())
+  max_y = max(grid[0].keys())
+  for y in range(min_y, max_y+1):
+    min_x = min(grid.keys())
+    max_x = max(grid.keys())
+    for x in range(min_x, max_x+1):
+      grid[x][y] = int(grid[x][y])
