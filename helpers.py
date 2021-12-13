@@ -110,6 +110,17 @@ def copy_grid(grid):
       new_grid[new_x][new_y] = grid[x][y]
   return new_grid
 
+def copy_grid_partial(grid, min_x, min_y, max_x, max_y):
+  new_grid = {}
+  for y in range(min_y, max_y+1):
+    for x in range(min_x, max_x+1):
+      new_x = x
+      new_y = y
+      if new_x - min_x not in new_grid:
+        new_grid[new_x - min_x] = {}
+      new_grid[new_x - min_x][new_y - min_y] = grid[x][y]
+  return new_grid
+
 def convert_grid_to_int(grid):
   new_grid = {}
   min_y = min(grid[0].keys())
@@ -118,4 +129,20 @@ def convert_grid_to_int(grid):
     min_x = min(grid.keys())
     max_x = max(grid.keys())
     for x in range(min_x, max_x+1):
-      grid[x][y] = int(grid[x][y])
+      new_x = x
+      new_y = y
+      if new_x not in new_grid:
+        new_grid[new_x] = {}
+      new_grid[new_x][new_y] = int(grid[x][y])
+  return new_grid
+
+def init_grid(grid, max_x, max_y, init_value):
+  min_x = 0
+  min_y = 0
+  for y in range(min_y, max_y+1):
+    for x in range(min_x, max_x+1):
+      new_x = x
+      new_y = y
+      if new_x not in grid:
+        grid[new_x] = {}
+      grid[new_x][new_y] = init_value
