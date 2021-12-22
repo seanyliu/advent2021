@@ -22,7 +22,7 @@ def get_grid_from_lines(input_lines):
       if x not in grid:
         grid[x] = {}
       grid[x][y] = c
-      # print(str(x)+","+str(y)+"="+c)
+      #print(str(x)+","+str(y)+"="+c)
       x = x+1
     y = y+1
   return grid
