@@ -1,0 +1,21 @@
+Block 0 (LINEAR) ===========
+
+Block 1 (MULT) ===========
+Block 2 (MULT) ===========
+Block 3 (MULT) ===========
+Block 5 (MULT) ===========
+Block 8 (MULT) ===========
+Block 9 (MULT) ===========
+6x forced multiply
+
+
+Block 4 (DIVIDE OR LINEAR) ===========
+Block 6 (DIVIDE OR LINEAR) ===========
+Block 7 (DIVIDE OR LINEAR) ===========
+Block 10 (DIVIDE OR LINEAR) ===========
+Block 11 (DIVIDE OR FLAT) ===========
+Block 12 (DIVIDE OR LINEAR) ===========
+6x requires a divide!
+
+
+Block 13 (MUST SHRINK) ===========
