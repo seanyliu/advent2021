@@ -1,0 +1,505 @@
+Block 0 (LINEAR) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+y = (a + 8)
+x = 1
+z = (a + 8)
+w = a
+
+Block 1 (MULT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+y = (b + 8)
+x = 1
+z = (((a + 8) * 26) + (b + 8))
+w = b
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 1 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+# Case ( 1 if (( ( zPrev % 26 ) + 13 ) ) == ( i ) else 0 )
+('z', 'zPrev')
+This case can never happen!!!
+
+# Else:
+('z', '( ( zPrev * 26 ) + (i + 8) )')
+
+
+('w', 'i')
+
+
+Block 2 (MULT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 3 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 1 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 3 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+('w', 'i')
+
+# Case: ( 1 if (( ( zPrev % 26 ) + 13 ) ) == ( i ) else 0 )
+This can never happen!
+('z', 'zPrev')
+
+Else:
+('z', '( ( zPrev * 26 ) + ( i + 3 ) )')
+
+
+
+Block 3 (MULT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 10
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 10 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 1 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 10 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+('w', 'i')
+
+SIMPLIFY
+('z', '( ( zPrev * ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 10 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+CASE ( 1 if (( ( zPrev % 26 ) + 12 ) ) == ( i ) else 0 )
+NEVER HAPPENS
+('z', '( zPrev )')
+
+ELSE
+('z', '( ( zPrev * 26 ) + ( ( ( ( ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 10 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+Block 4 (DIVIDE OR LINEAR) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 26 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+('w', 'i')
+
+SIMPLIFY
+('z', '( ( ( zPrev / 26 ) * ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+CASE ( 1 if (( ( zPrev % 26 ) + -12 ) ) == ( i ) else 0 )
+
+('z', '(zPrev / 26)')
+
+ELSE
+
+('z', '( ( ( zPrev / 26 ) * 26 ) + ( i + 8 ) )')
+
+
+Block 5 (MULT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 1 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+('w', 'i')
+
+SIMPLIFY
+('z', '( ( zPrev * ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+CASE ( 1 if (( ( zPrev % 26 ) + 12 ) ) == ( i ) else 0 )
+NEVER HAPPENS
+
+ELSE
+('z', '( ( zPrev * 26 ) + ( i + 8 ) )')
+
+Block 6 (DIVIDE OR LINEAR) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -2
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -2 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -2 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -2 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 26 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -2 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -2 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 8 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -2 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+
+Case ( 1 if (( ( zPrev % 26 ) - 2 ) ) == ( i ) else 0 ):
+
+'z' = '( ( zPrev / 26 ) + ( i + 8 ) )'
+
+Else:
+
+('z', '( ( ( zPrev / 26 ) * 26 ) + ( i + 8 ) )')
+
+
+('w', 'i')
+
+Block 7 (DIVIDE OR LINEAR) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -11
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -11 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 5 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -11 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -11 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 26 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -11 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -11 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 5 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -11 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+('w', 'i')
+
+Case ( 1 if (( ( zPrev % 26 ) + -11 ) ) == ( i ) else 0 ):
+z = zPrev / 26
+
+Else:
+z = '( ( ( zPrev / 26 ) * 26 ) + (i + 5) )'
+
+
+
+Block 8 (MULT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 9 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 1 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 9 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 13 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+
+Case: ( 1 if (( ( zPrev % 26 ) + 13 ) ) == ( i ) else 0 )
+NEVER HAPPENS
+('z', '( zPrev )')
+
+Else:
+
+('z', '( ( zPrev * 26 ) + (i + 9) )')
+
+
+
+('w', 'i')
+
+Block 9 (MULT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 14 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 3 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 14 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 14 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 1 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 14 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 14 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 3 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 14 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+
+Case: ( 1 if (( zPrev % 26 ) + 14) == ( i ) else 0 )
+NEVER HAPPENS
+'z' = '( zPrev )'
+
+Else:
+('z', '( ( zPrev * 26 ) + (i + 3) )')
+
+('w', 'i')
+
+Block 10 (DIVIDE OR LINEAR) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x 0
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 0 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 4 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 0 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 0 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+('z', '( ( ( zPrev / 26 ) * ( ( 25 * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 0 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 0 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 4 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + 0 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+Case: ( 1 if (( zPrev % 26 ) ) == ( i ) else 0 )
+
+('z', '( zPrev / 26 )')
+
+Else:
+
+'z' = ( ( ( zPrev / 26 ) * 26 ) + (i + 4) )
+
+
+
+('w', 'i')
+
+Block 11 (DIVIDE OR FLAT) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y
+
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 9 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 )')
+
+('z', '( ( ( zPrev / 26 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + i ) + 9 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -12 ) ) == ( i ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+Case ( (zPrev % 26) - 12 ) == i:
+'z' = zPrev / 26
+
+Else:
+'z' = '( ( (zPrev / 26) * 26 ) + (i + 9) )'
+
+
+
+
+('w', 'i')
+
+Block 12 (DIVIDE OR LINEAR) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 2
+mul y x
+add z y
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -13 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + c ) + 2 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -13 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -13 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 )')
+
+#If: ((zPrev % 26) - 13) == c
+z = ( zPrev / 26 )
+
+#Else:
+z = (((zPrev / 26) * 26) + (c + 2))
+
+# original:
+('z', '( ( ( zPrev / 26 ) * ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -13 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -13 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + c ) + 2 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -13 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+'w' = 'c'
+
+
+Block 13 (MUST SHRINK) ===========
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -6
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 7
+mul y x
+add z y
+
+
+
+('y', '( ( ( ( ( ( ( ( yPrev * 0 ) + 25 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -6 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + c ) + 7 ) * ( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -6 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) )')
+('x', '( 1 if (( 1 if (( ( ( ( xPrev * 0 ) + zPrev ) % 26 ) + -6 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 )')
+
+('z', '( ( ( zPrev / 26 ) * ( ( (25) * ( 1 if (( 1 if (( ( (zPrev) % 26 ) + -6 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) ) + ( ( ( ( ( ( ( 25 ) * ( 1 if (( 1 if (( ( ( zPrev ) % 26 ) + -6 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) + 1 ) * 0 ) + c ) + 7 ) * ( 1 if (( 1 if (( (zPrev % 26) + -6 ) ) == ( c ) else 0 ) ) == ( 0 ) else 0 ) ) )')
+
+The input character can't be negative, therefore we MUST have the situation where z%26 - 6 == the char
+
+If: (( ( (zPrev) % 26 ) + -6 ) ) == ( c )
+'z', '( zPrev / 26 )'
+
+Else:
+z = '( ( ( zPrev / 26 ) * 26 ) + (c + 7) )'
+
+
+'w' = 'c'
+
