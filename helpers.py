@@ -136,7 +136,8 @@ def convert_grid_to_int(grid):
       new_grid[new_x][new_y] = int(grid[x][y])
   return new_grid
 
-def init_grid(grid, max_x, max_y, init_value):
+def init_grid(max_x, max_y, init_value):
+  grid = {}
   min_x = 0
   min_y = 0
   for y in range(min_y, max_y+1):
@@ -146,3 +147,4 @@ def init_grid(grid, max_x, max_y, init_value):
       if new_x not in grid:
         grid[new_x] = {}
       grid[new_x][new_y] = init_value
+  return grid

@@ -134,7 +134,7 @@ while len(q) > 0:
     alus[aluIdx].vars = aluVars
     alus[aluIdx].input = aluInp
     alus[aluIdx].run()
-    #print ("prevDigits", prevDigits, "node:", aluInp, aluIdx, aluVars, "gives:", alus[aluIdx].vars)
+    print ("prevDigits", prevDigits, "node:", aluInp, aluIdx, aluVars, "gives:", alus[aluIdx].vars)
 
     # check the output if we're done
     if alus[aluIdx].vars["z"] == 0:
